@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="icon/IconCart.png" />
+  <title>Services</title>
+
+  <link rel="stylesheet" href="fontawesome/all.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <!-- Font Awesome -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <!-- Spartan font -->
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Slick -->
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/pre.css">
+  <link rel="stylesheet" href="css/header-a.css">
+  <link rel="stylesheet" href="css/footer-a.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/services.css">
+  <!-- <link rel="stylesheet" href="css/all.css"> -->
+
+
+  <script type="text/javascript">
+     $(document).ready(function(){
+        $(document).mouseup(function(e) 
+        {
+            var container = $(".top-bar__search");
+
+            if (!container.is(e.target) && container.has(e.target).length === 0) 
+              {
+                container.hide();
+              }
+        });
+
+
+       
+
+        $("#show__search-input").click(function(){
+          $(".top-bar__search").show();
+          $(".top-bar__search").css('display','flex');
+        });
+
+        $(".top-bar__icon-cart").click(function(){
+          $(".inside-cart").show();
+          $(".inside-cart").css('opacity','1');
+
+          // $(".hover-carts").css('display','block');
+          $("#overlay").css('display','block');
+        });
+        $(".cart-quantity").click(function(){
+          $(".inside-cart").show();
+          $(".inside-cart").css('opacity','1');
+          // $(".hover-carts").css('display','block');
+          $("#overlay").css('display','block');
+        });
+
+        $("#overlay").click(function(){
+          $(".inside-cart").hide();
+         
+          $("#overlay").hide();
+        });
+
+        $("#btn-show-menu").click(function(){
+          $(".top-bar__menu").css('left','0');
+        });
+        
+        
+        $("#btn-times").click(function(){
+          $(".top-bar__menu").css('left','-100%');
+        });
+
+     });
+  </script>
+
+
+</head>
+<body>
+
+  <header>
+    <section class="top-bar">
+      <div class="top-bar__content">
+        <div>
+          <div class="top-bar__logo">
+            <h1>Eliah</h1>
+          </div>
+          <div class="top-bar__menu">
+            <ul>
+              <i id="btn-times" class="far fa-times"></i>
+              <li>
+                <a id="item-home" href="index.html">Home</a>
+                <div class="menu-home">
+                  <a href="#"><div><span>01. </span>Beauty Salon</div></a>
+                  <a href="#"><div><span>02. </span>Makeup Shop</div></a>
+                  <a href="#"><div><span>03. </span>Natural Shop</div></a>
+                  <a href="#"><div><span>04. </span>Spa Shop</div></a>                
+                </div>
+              </li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li id="item-shop">
+                <a href="shop-grid-4col.html">Shop</a>
+                <div class="menu-shop">
+                  <div>
+                    <div class="list-menu-shop">
+                      <ul class="list-in-menu-shop">
+                        <li><a href="full-4col.html"><span>Shop Fullwidth 4Columns</span></a></li>
+                        <li><a href="ful-5col.html"><span>Shop Fullwidth 5Columns</span></a></li>
+                        <li><a href="ful-lsb.html"><span>Shop Fullwidth Left Sidebar</span></a></li>
+                        <li><a href="ful-rsb.html"><span>Shop Fullwidth Right Sidebar</span></a></li>
+                      </ul>
+                    </div>
+                    <div class="list-menu-shop">
+                       <ul class="list-in-menu-shop">
+                         <li><a href="shop-grid-4col.html"><span>Shop grid 4Columns</span></a></li>
+                         <li><a href="shop-grid-3col.html"><span>Shop grid 3Columns</span></a></li>
+                         <li><a href="shop-grid-sidebar.html"><span>Shop Grid Sideber</span></a></li>
+                         <li><a href="shop-grid-sidebar.html"><span>Shop List Sidebar</span></a></li>
+                       </ul> 
+                    </div>
+                    <div class="list-menu-shop">
+                      <ul class="list-in-menu-shop">
+                        <li><a href="product-detail.html"><span>Product Detail</span></a></li>
+                        <li><a href="shopping-cart1.html"><span>Shopping cart</span></a></li>
+                        <li><a href="checkout.html"><span>Checkout</span></a></li>
+                        <li><a href="shopping-cart.html"><span>Wish list</span></a></li>
+                      </ul>  
+                    </div>
+                    
+                  </div>
+                  <div class="img-menu-shop">
+                      
+                  </div>
+                </div>
+              </li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="top-bar__cart">
+            <div id="show__search-input" style="position: relative;">
+              <i class="fal fa-search" ></i>
+              <div class="top-bar__search">
+                <input type="text" placeholder="What are you looking for?" class="top-bar__search-input">
+                <i  class="fal fa-search"></i>
+              </div>
+            </div> 
+            <a href="">
+              <i style="font-size: 25px; " class="fal fa-heart"></i>
+            </a>
+            <div class="top-bar__shopping-cart">
+              <div class="top-bar__icon-cart">
+                <i style="font-size: 27px;" class="fal fa-shopping-bag"></i>
+                <span>0</span>
+              </div>
+              <div class="cart-quantity">
+                <span>Cart:</span>
+                <span>$0.00</span>
+              </div>
+
+              <div id="overlay">
+
+              </div>
+              <div class="inside-cart">
+                  <div class="title-hover-carts">
+                    Shopping cart
+                  </div>
+                  <div class="list-pro-hover-carts">
+                    <div class="pro-hover-carts">
+                      <div>
+                        <div class="show-detail-pro-incart"> 
+          
+                        </div>
+                        <div>
+                          <a href="">
+                            <div class="pro-hover-carts-title ">
+                              The expert mascara
+                            </div>
+                          </a>
+                          <div class="pro-hover-carts-price">
+                            $21.00
+                          </div>
+                          <div class="pro-hover-carts-quantity">
+                            Quantity: <span>01</span>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fal fa-times-circle"></i>
+                    </div>
+          
+                    <div class="pro-hover-carts">
+                      <div>
+                        <div class="show-detail-pro-incart"> 
+          
+                        </div>
+                        <div>
+                          <a href="">
+                            <div class="pro-hover-carts-title">
+                              Leather shopper bag
+                            </div>
+                          </a>
+                          <div class="pro-hover-carts-price">
+                            $21.00
+                          </div>
+                          <div class="pro-hover-carts-quantity">
+                            Quantity: <span>01</span>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fal fa-times-circle"></i>
+                    </div><div class="pro-hover-carts">
+                      <div>
+                        <div class="show-detail-pro-incart"> 
+          
+                        </div>
+                        <div>
+                          <a href="">
+                            <div class="pro-hover-carts-title ">
+                              Velvet Melon High Intensity
+                            </div>
+                          </a>
+                          <div class="pro-hover-carts-price">
+                            $21.00
+                          </div>
+                          <div class="pro-hover-carts-quantity">
+                            Quantity: <span>03</span>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fal fa-times-circle"></i>
+                    </div><div class="pro-hover-carts">
+                      <div>
+                        <div class="show-detail-pro-incart"> 
+          
+                        </div>
+                        <div>
+                          <a href="">
+                            <div class="pro-hover-carts-title ">
+                              Luxe jewel lipstick
+                            </div>
+                          </a>
+                          <div class="pro-hover-carts-price">
+                            $21.00
+                          </div>
+                          <div class="pro-hover-carts-quantity">
+                            Quantity: <span>01</span>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fal fa-times-circle"></i>
+                    </div>
+          
+                
+                  </div>
+                  <div class="total-hover-carts">
+                    <div>
+                      <span>Total</span>
+                      <span>$217.00</span>
+                    </div>
+                    <div class="total-button-viewcart">
+                      VIEW CART
+                    </div>
+                    <div class="total-button-checkout">
+                      CHECK OUT
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="button-bar">
+            <input type="checkbox" id="click-menu">
+            <label for="click-menu" id="menu-btn">
+              <i id="btn-show-menu" class="far fa-bars"></i>
+            </label>  
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Services</h1>
+        <div>
+          <span>Home</span>
+          <span>/</span>
+          <span>Services</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-content">
+      <div class="sv-main-content">
+        <div class="sv-main-1">
+          <div class="sv-main-1-left">
+            <img src="img/Graphic-sv-1.png" alt="">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="sv-main-1-right">
+            <div>01.
+              <img src="icon/tripble-wave.png" alt="">
+            </div>
+            <div>Body treatment</div>
+            <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel facilisis. </p>
+            <ul>
+              <li>
+                <i class="fal fa-check"></i>
+                <span>Lorem ipsum dolor sit amet, consectetur.</span>
+              </li>
+              <li>
+                <i class="fal fa-check"></i>
+                <span>Adipiscing elit, sed do eiusmod tempor.</span>
+              </li>
+              <li>
+                <i class="fal fa-check"></i>
+                <span>Incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li>
+                <i class="fal fa-check"></i>
+                <span>Quis ipsum suspendisse ultrices gravida.</span>
+              </li>
+            </ul>
+            <button>READ MORE</button>
+          </div>
+        </div>
+
+        <div class="sv-main-1 sv-main-2">
+          <div class="sv-main-1-left">
+            <img src="img/Graphic-sv-2.png" alt="">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="sv-main-1-right">
+            <div>
+              <img src="icon/tripble-wave.png" alt="">
+              .02
+            </div>
+            <div>Professinal makeup</div>
+            <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel facilisis. </p>
+            <ul>
+              <li>
+                
+                <span>Lorem ipsum dolor sit amet, consectetur.</span>
+                <i class="fal fa-check"></i>
+              </li>
+              <li>
+                
+                <span>Adipiscing elit, sed do eiusmod tempor.</span>
+                <i class="fal fa-check"></i>
+              </li>
+              <li>
+                
+                <span>Incididunt ut labore et dolore magna aliqua.</span>
+                <i class="fal fa-check"></i>
+              </li>
+              <li>
+                
+                <span>Quis ipsum suspendisse ultrices gravida.</span>
+                <i class="fal fa-check"></i>
+              </li>
+            </ul>
+            <button>READ MORE</button>
+          </div>
+        </div>
+
+
+        <div class="sv-main-1 sv-main-3">
+          <div class="sv-main-1-left">
+            <img src="img/Graphic-sv-1.png" alt="">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="sv-main-1-right">
+            <div>03.
+              <img src="icon/tripble-wave.png" alt="">
+            </div>
+            <div>Maincure & pedicure</div>
+            <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel facilisis. </p>
+            <ul>
+              <li>
+                <i class="fal fa-check"></i>
+                <span>Lorem ipsum dolor sit amet, consectetur.</span>
+              </li>
+              <li>
+                <i class="fal fa-check"></i>
+                <span>Adipiscing elit, sed do eiusmod tempor.</span>
+              </li>
+              <li>
+                <i class="fal fa-check"></i>
+                <span>Incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li>
+                <i class="fal fa-check"></i>
+                <span>Quis ipsum suspendisse ultrices gravida.</span>
+              </li>
+            </ul>
+            <button>READ MORE</button>
+          </div>
+        </div>
+
+
+        <div class="sv-main-1 sv-main-2">
+          <div class="sv-main-1-left">
+            <img src="img/Graphic-sv-2.png" alt="">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="sv-main-1-right">
+            <div>
+              <img src="icon/tripble-wave.png" alt="">
+              .04
+            </div>
+            <div>Hair cut & Coloring</div>
+            <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel facilisis. </p>
+            <ul>
+              <li>
+                
+                <span>Lorem ipsum dolor sit amet, consectetur.</span>
+                <i class="fal fa-check"></i>
+              </li>
+              <li>
+                
+                <span>Adipiscing elit, sed do eiusmod tempor.</span>
+                <i class="fal fa-check"></i>
+              </li>
+              <li>
+                
+                <span>Incididunt ut labore et dolore magna aliqua.</span>
+                <i class="fal fa-check"></i>
+              </li>
+              <li>
+                
+                <span>Quis ipsum suspendisse ultrices gravida.</span>
+                <i class="fal fa-check"></i>
+              </li>
+            </ul>
+            <button>READ MORE</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="sv-book-service">
+      <div class="form-book-sv">
+        <h2>Book Service</h2>
+        <div><img src="icon/home1-below-title.png" alt=""></div>
+        <form action="">
+          <input type="text" name="" placeholder="Your name" id="" class="sv-ip">
+          <input type="text" name="" placeholder="Your phone" id="" class="sv-ip">
+          <select name="" class="sv-select">
+            <option selected disabled hidden>Choose a service</option>
+            <option value="1">Body treatment</option>
+            <option value="2">Professinal makeup</option>
+            <option value="3">Maincure & pedicure</option>
+            <option value="4">Hair cut & Coloring</option>
+          </select>
+          <select name="" class="sv-select">
+            <option selected disabled hidden>Choose a date</option>
+            <option value="1">Body treatment</option>
+            <option value="2">Professinal makeup</option>
+            <option value="3">Maincure & pedicure</option>
+            <option value="4">Hair cut & Coloring</option>
+          </select>
+          <div>
+            <input type="submit" value="APPOITMENT">
+          </div>
+        </form>
+      </div>
+    </section>
+
+   
+  </main>
+
+  <footer>
+    <section class="footer-a">
+      <div class="footer__content">
+        <div class="footer__contact">
+          <div>
+            <h1>Eliah</h1>
+          </div>
+          <div>
+            <form class="form-sub" action="">
+              <label id="sub-newsletter" for="input-email">Subscribe Newletter</label>
+              <div>
+                <input type="text" id="input-email" placeholder="Your email">
+                <div class="icon-ariplane">
+                  <i class="fas fa-paper-plane"></i>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div>
+            <a href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-detail">
+          <div>
+            <div>
+              Contact info
+            </div>
+            <ul class="list-contact">
+              <li>
+                <span>Address:</span>
+                <span>2168 S Archer Ave, Chicago, IL 60616, US</span>
+              </li>
+              <li>
+                <span>Phone:</span>
+                <span>+1 312-808-1999</span>
+              </li>
+              <li>
+                <span>Email:</span>
+                <span>Beatycosmetics@gmail.com</span>
+              </li>
+              <li>
+                <span>Opentime:</span>
+                <span>8.00am - 11.00.pm </span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div>
+              Account
+            </div>
+            <ul class="list-account">
+              <li><a href="">My account</a></li>
+              <li><a href="">Wishlist</a></li>
+              <li><a href="">Cart</a></li>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Checkout</a></li>
+            </ul>
+          </div>
+          <div>  
+            <div>
+              Information
+            </div>
+            <ul class="list-information">
+              <li><a href="">About us</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Delivery Information</a></li>
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms & Condition</a></li>
+            </ul>
+          </div>
+          <div>
+            <div>
+              Payment methods
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit gravida facilisis. </p>
+            <div class="logo-payment">
+              <img src="icon/paypal_icon.png" alt="">
+              <img src="icon/visa_icon.png" alt="">
+              <img src="icon/mastercard_icon.png" alt="">
+              <img src="icon/cirrus_icon.png" alt="">
+            </div>
+          </div>
+        </div>        
+      </div>      
+    </section>
+    <section  class="footer-copyright">
+      <div>
+        <div>
+          © Copyright 2020 Beauty
+        </div>
+        <div>
+          <span><a href="">Privacy Policy</a></span>
+          <span>|</span>
+          <span><a href="">Terms & Conditions</a></span>
+          <span>|</span>
+          <span><a href="">Site Map</a></span>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+  <!-- Slick -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+</body>
+</html>

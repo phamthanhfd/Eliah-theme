@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="icon/IconCart.png" />
+  <title>Product detail</title>
+
+  <link rel="stylesheet" href="fontawesome/all.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <!-- Font Awesome -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <!-- Spartan font -->
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Slick -->
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/pre.css">
+  <link rel="stylesheet" href="css/header-a.css">
+  <link rel="stylesheet" href="css/footer-a.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/shopping-cart.css">
+  <link rel="stylesheet" href="css/product-detail.css">
+  <!-- <link rel="stylesheet" href="css/shopping-cart1.css"> -->
+  <!-- <link rel="stylesheet" href="css/all.css"> -->
+
+
+  <script type="text/javascript">
+     $(document).ready(function(){
+        $(document).mouseup(function(e) 
+        {
+            var container = $(".top-bar__search");
+
+            if (!container.is(e.target) && container.has(e.target).length === 0) 
+              {
+                container.hide();
+              }
+        });
+
+        
+        $('.pd-bigimg').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          asNavFor: '.slick-pd-img'
+        });
+        $('.slick-pd-img').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          asNavFor: '.pd-bigimg',
+          dots: false,
+          centerMode: true,
+          focusOnSelect: true,
+          arrows:true,
+          preArrow: $(".pd-slick-pre"),
+          nextArrow: $(".pd-slick-next")
+        });
+
+         
+        $('.slick-description').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          asNavFor: '.slick-dots-description'
+        });
+        $('.slick-dots-description').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          asNavFor: '.slick-description',
+          dots: false,
+          centerMode: true,
+          focusOnSelect: true,
+          arrows:true,
+        });
+
+
+        // $('.slick-description').slick({
+        //   appendDots: $('.slick-dots-description'),
+        //   slidesToShow: 1,
+        //   slidesToScroll: 1,
+        //   dots:true,
+        //   customPaging: function(slider, i) { 
+        //     var title = $(slider.$slides[i]).data('title');
+        //     return '<a class="pager__item"> '+title+' </a>';
+        //   }
+        // });
+
+
+       
+
+        $("#show__search-input").click(function(){
+          $(".top-bar__search").show();
+          $(".top-bar__search").css('display','flex');
+        });
+
+        $(".top-bar__icon-cart").click(function(){
+          $(".inside-cart").show();
+          $(".inside-cart").css('opacity','1');
+
+          // $(".hover-carts").css('display','block');
+          $("#overlay").css('display','block');
+        });
+        $(".cart-quantity").click(function(){
+          $(".inside-cart").show();
+          $(".inside-cart").css('opacity','1');
+          // $(".hover-carts").css('display','block');
+          $("#overlay").css('display','block');
+        });
+
+        $("#overlay").click(function(){
+          $(".inside-cart").hide();
+         
+          $("#overlay").hide();
+        });
+
+        $("#btn-show-menu").click(function(){
+          $(".top-bar__menu").css('left','0');
+        });
+        
+        
+        $("#btn-times").click(function(){
+          $(".top-bar__menu").css('left','-100%');
+        });
+
+     });
+  </script>
+
+
+</head>
+<body>
+
+  <header>
+    <section class="top-bar">
+      <div class="top-bar__content">
+        <div>
+          <div class="top-bar__logo">
+            <h1>Eliah</h1>
+          </div>
+          <div class="top-bar__menu">
+            <ul>
+              <i id="btn-times" class="far fa-times"></i>
+              <li>
+                <a id="item-home" href="index.html">Home</a>
+                <div class="menu-home">
+                  <a href="#"><div><span>01. </span>Beauty Salon</div></a>
+                  <a href="#"><div><span>02. </span>Makeup Shop</div></a>
+                  <a href="#"><div><span>03. </span>Natural Shop</div></a>
+                  <a href="#"><div><span>04. </span>Spa Shop</div></a>                
+                </div>
+              </li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li id="item-shop">
+                <a href="shop-grid-4col.html">Shop</a>
+                <div class="menu-shop">
+                  <div>
+                    <div class="list-menu-shop">
+                      <ul class="list-in-menu-shop">
+                        <li><a href="full-4col.html"><span>Shop Fullwidth 4Columns</span></a></li>
+                        <li><a href="ful-5col.html"><span>Shop Fullwidth 5Columns</span></a></li>
+                        <li><a href="ful-lsb.html"><span>Shop Fullwidth Left Sidebar</span></a></li>
+                        <li><a href="ful-rsb.html"><span>Shop Fullwidth Right Sidebar</span></a></li>
+                      </ul>
+                    </div>
+                    <div class="list-menu-shop">
+                       <ul class="list-in-menu-shop">
+                         <li><a href="shop-grid-4col.html"><span>Shop grid 4Columns</span></a></li>
+                         <li><a href="shop-grid-3col.html"><span>Shop grid 3Columns</span></a></li>
+                         <li><a href="shop-grid-sidebar.html"><span>Shop Grid Sideber</span></a></li>
+                         <li><a href="shop-grid-sidebar.html"><span>Shop List Sidebar</span></a></li>
+                       </ul> 
+                    </div>
+                    <div class="list-menu-shop">
+                      <ul class="list-in-menu-shop">
+                        <li><a href="product-detail.html"><span>Product Detail</span></a></li>
+                        <li><a href="shopping-cart1.html"><span>Shopping cart</span></a></li>
+                        <li><a href="checkout.html"><span>Checkout</span></a></li>
+                        <li><a href="shopping-cart.html"><span>Wish list</span></a></li>
+                      </ul>  
+                    </div>
+                    
+                  </div>
+                  <div class="img-menu-shop">
+                      
+                  </div>
+                </div>
+              </li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="top-bar__cart">
+            <div id="show__search-input" style="position: relative;">
+              <i class="fal fa-search" ></i>
+              <div class="top-bar__search">
+                <input type="text" placeholder="What are you looking for?" class="top-bar__search-input">
+                <i  class="fal fa-search"></i>
+              </div>
+            </div> 
+            <a href="">
+              <i style="font-size: 25px; " class="fal fa-heart"></i>
+            </a>
+            <div class="top-bar__shopping-cart">
+              <div class="top-bar__icon-cart">
+                <i style="font-size: 27px;" class="fal fa-shopping-bag"></i>
+                <span>0</span>
+              </div>
+              <div class="cart-quantity">
+                <span>Cart:</span>
+                <span>$0.00</span>
+              </div>
+
+              <div id="overlay">
+
+              </div>
+              <div class="inside-cart">
+                  <div class="title-hover-carts">
+                    Shopping cart
+                  </div>
+                  <div class="list-pro-hover-carts">
+                    <div class="pro-hover-carts">
+                      <div>
+                        <div class="show-detail-pro-incart"> 
+          
+                        </div>
+                        <div>
+                          <a href="">
+                            <div class="pro-hover-carts-title ">
+                              The expert mascara
+                            </div>
+                          </a>
+                          <div class="pro-hover-carts-price">
+                            $21.00
+                          </div>
+                          <div class="pro-hover-carts-quantity">
+                            Quantity: <span>01</span>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fal fa-times-circle"></i>
+                    </div>
+          
+                    <div class="pro-hover-carts">
+                      <div>
+                        <div class="show-detail-pro-incart"> 
+          
+                        </div>
+                        <div>
+                          <a href="">
+                            <div class="pro-hover-carts-title">
+                              Leather shopper bag
+                            </div>
+                          </a>
+                          <div class="pro-hover-carts-price">
+                            $21.00
+                          </div>
+                          <div class="pro-hover-carts-quantity">
+                            Quantity: <span>01</span>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fal fa-times-circle"></i>
+                    </div><div class="pro-hover-carts">
+                      <div>
+                        <div class="show-detail-pro-incart"> 
+          
+                        </div>
+                        <div>
+                          <a href="">
+                            <div class="pro-hover-carts-title ">
+                              Velvet Melon High Intensity
+                            </div>
+                          </a>
+                          <div class="pro-hover-carts-price">
+                            $21.00
+                          </div>
+                          <div class="pro-hover-carts-quantity">
+                            Quantity: <span>03</span>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fal fa-times-circle"></i>
+                    </div><div class="pro-hover-carts">
+                      <div>
+                        <div class="show-detail-pro-incart"> 
+          
+                        </div>
+                        <div>
+                          <a href="">
+                            <div class="pro-hover-carts-title ">
+                              Luxe jewel lipstick
+                            </div>
+                          </a>
+                          <div class="pro-hover-carts-price">
+                            $21.00
+                          </div>
+                          <div class="pro-hover-carts-quantity">
+                            Quantity: <span>01</span>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fal fa-times-circle"></i>
+                    </div>
+          
+                
+                  </div>
+                  <div class="total-hover-carts">
+                    <div>
+                      <span>Total</span>
+                      <span>$217.00</span>
+                    </div>
+                    <div class="total-button-viewcart">
+                      VIEW CART
+                    </div>
+                    <div class="total-button-checkout">
+                      CHECK OUT
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="button-bar">
+            <input type="checkbox" id="click-menu">
+            <label for="click-menu" id="menu-btn">
+              <i id="btn-show-menu" class="far fa-bars"></i>
+            </label>  
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Product Detail</h1>
+        <div>
+          <span>Home</span>
+          <span>/</span>
+          <span>Shop</span>
+          <span>/</span>
+          <span>Velvet melon high istensity</span>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="pd-main">
+      <div class="pd-main-content">
+        <div class="pro-detail">
+          <div class="pd-pro-detail">
+            <div class="pd-img">
+              <div class="pd-bigimg">
+                <img src="img/pd1.jpg" alt="">
+                <img src="img/pd2.jpg" alt="">
+                <img src="img/pd3.jpg" alt="">
+                <img src="img/pd4.jpg" alt="">
+                <img src="img/pd5.jpg" alt="">
+                <img src="img/pd6.jpg" alt="">
+                <img src="img/pd8.jpg" alt="">
+                <img src="img/pd9.jpg" alt="">
+              </div>
+              <div class="slick-pd-img">
+                <img src="img/pd1.jpg" alt="">
+                <img src="img/pd2.jpg" alt="">
+                <img src="img/pd3.jpg" alt="">
+                <img src="img/pd4.jpg" alt="">
+                <img src="img/pd5.jpg" alt="">
+                <img src="img/pd6.jpg" alt="">
+                <img src="img/pd8.jpg" alt="">
+                <img src="img/pd9.jpg" alt="">
+              </div>
+              <div class="pd-button-slick">
+                <div class="pd-slick-pre">
+                  <i class="far fa-chevron-left"></i>
+                </div>
+                <div class="pd-slick-next">
+                  <i class="far fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+            <div class="pd-info">
+              <div class="info-pro">
+                <div>Cheek&Coutour</div>
+                <div>Velvet Melon High Intensity</div>
+
+                <div class="pd-star">
+                  <div>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                  <span>/</span>
+                  <span>03 reviews</span>
+                  <span>/</span>
+                  <span>Write a review</span>
+                </div>
+
+                <div>$34.00</div>
+                <!-- <div></div> -->
+              </div>
+
+              <div class="pd-detail">
+                <div>Brand: <span>Kosas</span></div>
+                <div>Product code: <span>PM 001</span></div>
+                <div>Reward points: <span>30</span></div>
+                <div>Availability: <span>In Stock</span></div>
+
+                <div class="pd-color">
+                  <span>Color:</span>
+                  <div class="list-color">
+                    <label for="brown">
+                      <input type="radio" name="color" id="brown">
+                      <div class="color-checkmark"></div>
+                      
+                    </label>
+                    
+                    <label for="orange">
+                      <input type="radio" name="color" id="orange" checked>
+                      <div class="color-checkmark"></div>                      
+                    </label>
+                    
+                    <label for="pink">
+                      <input type="radio" name="color" id="pink">
+                      <div class="color-checkmark"></div>
+                     
+                    </label>
+                   
+                  </div>
+                </div>
+
+                <div class="pd-add">
+                  <div>
+                    <button onclick="this.parentNode.querySelector('[type=number]').stepDown();"><i class="fal fa-minus"></i></button>
+                    <input type="number" name="" value="01" min="01" step="01" id="pd-number">
+                    <button onclick="this.parentNode.querySelector('[type=number]').stepUp();"><i class="fal fa-plus"></i></button>
+                  </div>
+
+                  <div class="pdetail-add">
+                    <input type="submit" value="" id="sub-prod">
+                    <label class="button-add" for="sub-prod">
+                      <div>
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      ADD TO CART
+                    </label>
+                  </div>
+
+                  <div class="pre-view">
+                    <i class="far fa-eye"></i>
+                  </div>
+
+                  <div class="pro-heart">
+                    <i class="fas fa-heart"></i>
+                  </div>
+                </div>
+
+                <div class="pd-description">
+                  <div class="slick-dots-description">
+                    <div class="slick-des-title" data-title="title1">Description<span>/</span></div>                    
+                    <div style="margin-left: 2rem;" class="slick-des-title" data-title="title2">Shipping & Returns<span>/</span></div>                    
+                    <div style="margin-left: 2rem;" class="slick-des-title" data-title="title3">Reviews ( 03 )</div>
+                  </div>
+                  <div class="slick-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+                      <br>Lorem ipsum dolor sit. Eius at iste dolores? Nostrum repellendus perspiciatis quibusdam, in cupiditate veniam ullam? Explicabo exercitationem, reiciendis minima autem eveniet suscipit soluta aliquam maiores!
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                      <br>Lorem, ipsum dolor. Explicabo ullam, necessitatibus cumque cum blanditiis enim, ipsum excepturi mollitia alias voluptatibus commodi earum, sed quis error repudiandae. Assumenda.
+                      <br>Lorem nostrum quia id minima. Expedita corporis eos commodi eligendi magni. Natus quis veritatis cum voluptas eaque!
+                    </p>    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="related-products">
+          <h1>Related Products</h1>
+          <div>
+            <div class="products__list">
+
+              <div class="eliah-product">
+                <a href="product-detail.html" >
+                  <div class="eliah-pro__img">
+                      <div class="eliah-pro-sale">
+                        -30%
+                      </div>
+                      <!-- <div class="eliah-pro-new">
+                        NEW
+                      </div> -->
+                    <div class="eliah-pro__quick-choice">
+                      <div class="eliah-pro__add-to-cart">
+                        <i class="far fa-shopping-bag"></i>
+                        <div class="eliah-pro__add-hover">
+                          Add to Cart
+                        </div>
+                    
+                      </div>
+                      <div>
+                        <i class="far fa-eye"></i>
+                      </div>
+                      <div>
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="eliah-pro__info">
+                  <div class="eliah-pro__info-category-star">
+                    <span>Eyes</span>
+                    <div class="eliah-pro__info-star">
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <a href="product-detail.html" class="eliah-pro__info-name">
+                    The expert mascaraa
+                  </a>
+                  <div class="eliah-pro__info-price">
+                    <span class="eliah-pro__info-price-saled">$21.00</span>
+                    <span class="eliah-pro__info-price-unsale">$29.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="eliah-product">
+                <a href="product-detail.html" >
+                  <div class="eliah-pro__img">
+                      <!-- <div class="eliah-pro-sale">
+                        -30%
+                      </div> -->
+                      <!-- <div class="eliah-pro-new">
+                        NEW
+                      </div> -->
+                    <div class="eliah-pro__quick-choice">
+                      <div class="eliah-pro__add-to-cart">
+                        <i class="far fa-shopping-bag"></i>
+                        <div class="eliah-pro__add-hover">
+                          Add to Cart
+                        </div>
+                    
+                      </div>
+                      <div>
+                        <i class="far fa-eye"></i>
+                      </div>
+                      <div>
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="eliah-pro__info">
+                  <div class="eliah-pro__info-category-star">
+                    <span>Eyes</span>
+                    <div class="eliah-pro__info-star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                  <a href="product-detail.html" class="eliah-pro__info-name">
+                    The expert mascaraa
+                  </a>
+                  <div class="eliah-pro__info-price">
+                    <span class="eliah-pro__info-price-saled">$21.00</span>
+                    <span class="eliah-pro__info-price-unsale">$29.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="eliah-product">
+                <a href="product-detail.html" >
+                  <div class="eliah-pro__img">
+                      <!-- <div class="eliah-pro-sale">
+                        -30%
+                      </div> -->
+                      <!-- <div class="eliah-pro-new">
+                        NEW
+                      </div> -->
+                    <div class="eliah-pro__quick-choice">
+                      <div class="eliah-pro__add-to-cart">
+                        <i class="far fa-shopping-bag"></i>
+                        <div class="eliah-pro__add-hover">
+                          Add to Cart
+                        </div>
+                    
+                      </div>
+                      <div>
+                        <i class="far fa-eye"></i>
+                      </div>
+                      <div>
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="eliah-pro__info">
+                  <div class="eliah-pro__info-category-star">
+                    <span>Eyes</span>
+                    <div class="eliah-pro__info-star">
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <a href="product-detail.html" class="eliah-pro__info-name">
+                    The expert mascaraa
+                  </a>
+                  <div class="eliah-pro__info-price">
+                    <span class="eliah-pro__info-price-saled">$21.00</span>
+                    <span class="eliah-pro__info-price-unsale">$29.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="eliah-product">
+                <a href="product-detail.html" >
+                  <div class="eliah-pro__img">
+                      <!-- <div class="eliah-pro-sale">
+                        -30%
+                      </div> -->
+                      <div class="eliah-pro-new">
+                        NEW
+                      </div>
+                    <div class="eliah-pro__quick-choice">
+                      <div class="eliah-pro__add-to-cart">
+                        <i class="far fa-shopping-bag"></i>
+                        <div class="eliah-pro__add-hover">
+                          Add to Cart
+                        </div>
+                    
+                      </div>
+                      <div>
+                        <i class="far fa-eye"></i>
+                      </div>
+                      <div>
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="eliah-pro__info">
+                  <div class="eliah-pro__info-category-star">
+                    <span>Eyes</span>
+                    <div class="eliah-pro__info-star">
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <a href="product-detail.html" class="eliah-pro__info-name">
+                    The expert mascaraa
+                  </a>
+                  <div class="eliah-pro__info-price">
+                    <span class="eliah-pro__info-price-saled">$21.00</span>
+                    <span class="eliah-pro__info-price-unsale">$29.00</span>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="bottom-list-img">
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section class="footer-a">
+      <div class="footer__content">
+        <div class="footer__contact">
+          <div>
+            <h1>Eliah</h1>
+          </div>
+          <div>
+            <form class="form-sub" action="">
+              <label id="sub-newsletter" for="input-email">Subscribe Newletter</label>
+              <div>
+                <input type="text" id="input-email" placeholder="Your email">
+                <div class="icon-ariplane">
+                  <i class="fas fa-paper-plane"></i>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div>
+            <a href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-detail">
+          <div>
+            <div>
+              Contact info
+            </div>
+            <ul class="list-contact">
+              <li>
+                <span>Address:</span>
+                <span>2168 S Archer Ave, Chicago, IL 60616, US</span>
+              </li>
+              <li>
+                <span>Phone:</span>
+                <span>+1 312-808-1999</span>
+              </li>
+              <li>
+                <span>Email:</span>
+                <span>Beatycosmetics@gmail.com</span>
+              </li>
+              <li>
+                <span>Opentime:</span>
+                <span>8.00am - 11.00.pm </span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div>
+              Account
+            </div>
+            <ul class="list-account">
+              <li><a href="">My account</a></li>
+              <li><a href="">Wishlist</a></li>
+              <li><a href="">Cart</a></li>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Checkout</a></li>
+            </ul>
+          </div>
+          <div>  
+            <div>
+              Information
+            </div>
+            <ul class="list-information">
+              <li><a href="">About us</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Delivery Information</a></li>
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms & Condition</a></li>
+            </ul>
+          </div>
+          <div>
+            <div>
+              Payment methods
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit gravida facilisis. </p>
+            <div class="logo-payment">
+              <img src="icon/paypal_icon.png" alt="">
+              <img src="icon/visa_icon.png" alt="">
+              <img src="icon/mastercard_icon.png" alt="">
+              <img src="icon/cirrus_icon.png" alt="">
+            </div>
+          </div>
+        </div>        
+      </div>      
+    </section>
+    <section  class="footer-copyright">
+      <div>
+        <div>
+          © Copyright 2020 Beauty
+        </div>
+        <div>
+          <span><a href="">Privacy Policy</a></span>
+          <span>|</span>
+          <span><a href="">Terms & Conditions</a></span>
+          <span>|</span>
+          <span><a href="">Site Map</a></span>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+  <!-- Slick -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+</body>
+</html>
